@@ -4,7 +4,7 @@ import { jsonb } from "drizzle-orm/pg-core";
 import { text } from "drizzle-orm/pg-core";
 import { pgTable } from "drizzle-orm/pg-core";
 import { pgEnum } from "drizzle-orm/pg-core";
-
+import {z} from 'zod';
 export const matchStatusEnum = pgEnum('match_status' , ['scheduled' , 'live', 'finished']);
 
 export const matches = pgTable('matches', {
@@ -19,6 +19,8 @@ export const matches = pgTable('matches', {
     awayScore : integer('away_score').notNull().default(0),
     createdAt:timestamp('created_at').notNull().defaultNow()      
 });
+
+  
 
 export const commentary = pgTable('commentary',{
 
