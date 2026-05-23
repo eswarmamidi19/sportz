@@ -1,10 +1,11 @@
+import { InferInsertModel, InferSelectModel } from "drizzle-orm";
 import { integer, serial } from "drizzle-orm/pg-core";
 import { timestamp } from "drizzle-orm/pg-core";
 import { jsonb } from "drizzle-orm/pg-core";
 import { text } from "drizzle-orm/pg-core";
 import { pgTable } from "drizzle-orm/pg-core";
 import { pgEnum } from "drizzle-orm/pg-core";
-
+import {z} from 'zod';
 export const matchStatusEnum = pgEnum('match_status' , ['scheduled' , 'live', 'finished']);
 
 export const matches = pgTable('matches', {

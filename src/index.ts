@@ -1,4 +1,5 @@
 import express from 'express';
+import matchRouter from './routes/matchs.route';
 
 
 const app = express();
@@ -10,6 +11,11 @@ app.get("/" , (req , res) =>{
      console.log("hello")
      res.json({ testing  : "OK"})
 })
+
+
+
+
+app.use('/matches' , matchRouter );
 
 
 app.listen(PORT , (err)=>{
