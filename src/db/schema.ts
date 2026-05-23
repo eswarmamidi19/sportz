@@ -1,3 +1,4 @@
+import { InferInsertModel, InferSelectModel } from "drizzle-orm";
 import { integer, serial } from "drizzle-orm/pg-core";
 import { timestamp } from "drizzle-orm/pg-core";
 import { jsonb } from "drizzle-orm/pg-core";
@@ -19,8 +20,6 @@ export const matches = pgTable('matches', {
     awayScore : integer('away_score').notNull().default(0),
     createdAt:timestamp('created_at').notNull().defaultNow()      
 });
-
-  
 
 export const commentary = pgTable('commentary',{
 

@@ -13,7 +13,9 @@ app.get("/" , (req , res) =>{
 })
 
 
-app.use('/matchs' , matchRouter );
+
+
+app.use('/matches' , matchRouter );
 
 
 app.listen(PORT , (err)=>{

@@ -1,20 +1,19 @@
 import { WATCH_STATUS } from "../validation/matches";
 
+type statusType = "scheduled" | "live" | "finished"
 
-type status = typeof WATCH_STATUS
-
-export function getMatchStatus(start_time : Date , end_time :Date , now : Date = new Date()){
+export function getMatchStatus(start_time : Date , end_time :Date , now : Date = new Date()) : statusType{
    const start = new Date(start_time);
    const end = new Date(end_time);
 
    if(now < start){
-    return WATCH_STATUS.SCHEDULED;
+    return "scheduled";
    }
 
    if (now >= end){
-     return WATCH_STATUS.FINISHED;
+     return "finished";
    }
-   return WATCH_STATUS.LIVE;
+   return "live";
 }
 
 // export function syncMatchStatus(match , updateStream){
