@@ -21,6 +21,8 @@ export const matches = pgTable('matches', {
     createdAt:timestamp('created_at').notNull().defaultNow()      
 });
 
+export const matchType = typeof matches.$inferSelect;
+
 export const commentary = pgTable('commentary',{
 
     id:serial('id').primaryKey(),
